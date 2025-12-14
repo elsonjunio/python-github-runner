@@ -1,15 +1,29 @@
-name: Node test (externals)
+name: Self-hosted runner test
 
 on:
   workflow_dispatch:
 
 jobs:
-  node-test:
+  test-runner:
     runs-on: self-hosted
 
     steps:
-      - name: Check node
+      - name: Who am I
         run: |
-          node -v
-          npm -v
-          which node
+          whoami
+          id
+          pwd
+
+      - name: System info
+        run: |
+          uname -a
+          cat /etc/os-release
+
+      - name: Disk usage
+        run: |
+          df -h
+          du -sh .
+
+      - name: Process list (Runner.Listener)
+        run: |
+          ps aux | grep Runner.Listener | grep -v grep
