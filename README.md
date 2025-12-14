@@ -209,6 +209,8 @@ Se o runner estiver corretamente registrado, o job será executado nele.
 
 - Autenticação na API
 
+---
+
 ### 📜 Licença
 
 **MIT**
