@@ -96,6 +96,7 @@ class RunnerFactory:
             '_work',
             '--unattended',
             '--replace',
+            '--disable-sudo',
         ]
 
         result = subprocess.run(

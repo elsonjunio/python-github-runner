@@ -1,0 +1,29 @@
+name: Self-hosted runner test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Who am I
+        run: |
+          whoami
+          id
+          pwd
+
+      - name: System info
+        run: |
+          uname -a
+          cat /etc/os-release
+
+      - name: Disk usage
+        run: |
+          df -h
+          du -sh .
+
+      - name: Process list (Runner.Listener)
+        run: |
+          ps aux | grep Runner.Listener | grep -v grep
