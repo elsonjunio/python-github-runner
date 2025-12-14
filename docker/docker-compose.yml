@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  runner-manager:
+    build: ..
+    container_name: github-runner-manager
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - /home/elson/github-runner-base:/opt/github-runner-base
+      - /home/elson/github-runner:/opt/github-runners
+      - /var/run/docker.sock:/var/run/docker.sock
