@@ -10,6 +10,6 @@ services:
     env_file:
       - .env
     volumes:
-      - /home/elson/github-runner-base:/opt/github-runner-base
-      - /home/elson/github-runner:/opt/github-runners
+      - ./github-runner-base:/opt/github-runner-base
+      - ./github-runners:/opt/github-runners
       - /var/run/docker.sock:/var/run/docker.sock
